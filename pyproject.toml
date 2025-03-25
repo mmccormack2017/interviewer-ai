@@ -1,0 +1,15 @@
+[project]
+name = "interviewerai"
+
+authors = [{ name = "Matt McCormack", email = "mmccormack2017@gmail.com" }]
+
+maintainers = [
+  { name = "Matt Mccormack", email = "mmccormack2017@gmail.com" },
+]
+
+version = "1.0.0"
+
+description = "A tool that helps people prepare for interviews"
+
+[tool.setuptools]
+py-modules = ['interviewerai']
