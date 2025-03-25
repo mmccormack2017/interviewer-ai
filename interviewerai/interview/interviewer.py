@@ -8,8 +8,13 @@ class Interviewer:
     def __init__(self):
         self.model = genai.GenerativeModel("gemini-2.0-flash")
     
-    def generate_behavioral_question(self):
-        response = self.model.generate_content("Come up with a behavioral interview question for a data science position at a FAANG company. Give me only the question and no other text.")
+    def generate_behavioral_question(self, history):
+        print(history)
+        if history==[]:
+            response = self.model.generate_content("Come up with a behavioral interview question for a data science position at a FAANG company. Give me only the question and no other text.")
+        else:
+            print(history)
+            response = self.model.generate_content(f"Come up with a behavioral interview question for a data science position at a FAANG company. Give me only the question and no other text. Do not repeat questions from the following list: {history}")
         return response.text
     
     def judge_answer(self, question, answer):
