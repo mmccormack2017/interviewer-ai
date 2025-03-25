@@ -10,7 +10,7 @@ interviewer = Interviewer()
 
 def chat(message, history):
     if history == []:
-        question = interviewer.generate_behavioral_question()
+        question = interviewer.generate_behavioral_question(history)
         return question
     if message['files'] != []:
         samplerate, data = wavfile.read(message['files'][0])
@@ -18,7 +18,7 @@ def chat(message, history):
     if message['text'] != '':
         text = message['text']
     judgement = interviewer.judge_answer(history[-1], text)
-    question = interviewer.generate_behavioral_question()
+    question = interviewer.generate_behavioral_question(history)
     return [judgement, "\nHere is your next question:",question]
 
 with gr.Blocks() as demo:
