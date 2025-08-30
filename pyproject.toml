@@ -1,15 +1,49 @@
-[project]
+[tool.poetry]
 name = "interviewerai"
-
-authors = [{ name = "Matt McCormack", email = "mmccormack2017@gmail.com" }]
-
-maintainers = [
-  { name = "Matt Mccormack", email = "mmccormack2017@gmail.com" },
-]
-
 version = "1.0.0"
+description = "A sophisticated AI-powered interview practice tool"
+authors = ["Matt McCormack <mmccormack2017@gmail.com>"]
+readme = "README.md"
+packages = [{include = "interviewerai"}]
 
-description = "A tool that helps people prepare for interviews"
+[tool.poetry.dependencies]
+python = "^3.9"
+streamlit = "^1.28.0"
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+google-generativeai = "^0.3.0"
+transformers = "^4.35.0"
+torch = "^2.1.0"
+numpy = "^1.24.0"
+scipy = "^1.11.0"
+python-dotenv = "^1.0.0"
+loguru = "^0.7.0"
+openai-whisper = "^20231117"
 
-[tool.setuptools]
-py-modules = ['interviewerai']
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.9.0"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.6.0"
+
+[tool.poetry.scripts]
+interviewerai = "interviewerai.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

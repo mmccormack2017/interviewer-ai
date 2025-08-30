@@ -1,0 +1,34 @@
+# AI Interviewer Environment Configuration
+# Copy this file to .env and fill in your values
+
+# Required: Google Gemini API key
+# Get your API key from: https://makersuite.google.com/app/apikey
+INTERVIEWER_GEMINI_API_KEY=your_gemini_api_key_here
+
+# Optional: OpenAI API key (alternative to Gemini)
+# Get your API key from: https://platform.openai.com/api-keys
+INTERVIEWER_OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: Debug mode (true/false)
+INTERVIEWER_DEBUG=false
+
+# Optional: Log level (DEBUG, INFO, WARNING, ERROR)
+INTERVIEWER_LOG_LEVEL=INFO
+
+# Optional: Model configuration
+INTERVIEWER_MODEL__MODEL_NAME=gemini-2.0-flash
+INTERVIEWER_MODEL__TEMPERATURE=0.7
+INTERVIEWER_MODEL__MAX_TOKENS=1000
+
+# Optional: Whisper model size (tiny, base, small, medium, large)
+INTERVIEWER_MODEL__WHISPER_MODEL=base
+
+# Optional: Interview settings
+INTERVIEWER_INTERVIEW__MAX_QUESTIONS_PER_SESSION=10
+INTERVIEWER_INTERVIEW__ENABLE_SCORING=true
+INTERVIEWER_INTERVIEW__INTERVIEWER_PERSONALITY=professional_friendly
+
+# Optional: UI settings
+INTERVIEWER_UI__THEME=light
+INTERVIEWER_UI__ENABLE_AUDIO_RECORDING=true
+INTERVIEWER_UI__ENABLE_FILE_UPLOAD=true
